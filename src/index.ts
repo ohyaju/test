@@ -1,7 +1,15 @@
+"use client"
 import express, { Request, Response } from "express";
 import postgres from "postgres";
 import cors from "cors";
 import dotenv from "dotenv";
+import { z } from "zod"
+
+const formSchema = z.object({
+  username: z.string().min(5).max(50),
+  password: z.string().
+})
+
 
 // const port = 8000;
 const port = process.env.PORT || 8000;
